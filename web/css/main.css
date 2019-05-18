@@ -101,7 +101,7 @@ meter[value="4"]::-moz-meter-bar { background: green; }
 #loginform-cotainer {
     padding: 20px;
     position: relative;
-    width: 302px;
+    width: 400px;
     top: 60px;
 }
 

@@ -136,7 +136,7 @@ function isValidated() {
 
     // Update the text indicator
     if (val !== "") {
-        if(result.score < 3)
+        if(result.score < 1)
             return false;
     } else {
         return false;

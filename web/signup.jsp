@@ -56,7 +56,7 @@
                         <span id="alertPassMatch"> </span>
                     </div>  <br>
 
-                    <div id="signup-submit"><input type="submit" class="btn btn-success" value="Sign Up"></div>
+                    <div id="signup-submit"><input type="submit" class="btn btn-outline-primary" value="Sign Up"></div>
                 </form>
             </div>
         </div>

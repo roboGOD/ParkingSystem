@@ -32,7 +32,7 @@
                             <input type="password" name="Password" placeholder="Password" class="form-control" required>
                         </div>  <br>
 
-                    <input type="submit" class="btn btn-success" value="Log In">
+                    <input type="submit" class="btn btn-outline-primary" value="Log In">
                 </form>
             </div>
         </div>
