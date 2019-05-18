@@ -13,6 +13,9 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
         
         
+        <!-- Navbar -->
+        <%@include file="/navbar.jsp"%>
+        
         
         
         

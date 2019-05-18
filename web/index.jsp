@@ -12,6 +12,6 @@
         <title> Parking System </title>
     </head>
     <body>
-        <div class="alert alert-secondary">Hello World!</div>
+        <div class="alert alert-primary">Hello World!</div>
     </body>
 </html>
