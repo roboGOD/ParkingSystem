@@ -1,11 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.body-content {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    
+}
+
+
+/*****************************************/
+/*   Signup   */
+#signupform {
+    position: relative;
+    padding: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    float: left;
+}
+
+#signupform .input-group {
+    float: left;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+#signupform #signup-submit {
+    margin-top: 55px;
+}
+
+#signup-text {
+    color: #0984e3;
+    margin-bottom: 10px;
+}
+
+#inside-signupform {
+    padding: 20px;
+}
+
+.alerts-div {
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#pass-alerts-div {
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+/*Styling the meter*/
+#signupform meter {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 400px;
+    top: -30px;
+    height: 0.5em;
+
+    /* Applicable only to Firefox */
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#signupform meter::-webkit-meter-bar {
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: orange; }
+meter[value="4"]::-moz-meter-bar { background: green; }
 
 
 
+/*****************************************/
+/*   Login   */
+
+#login-text {
+    color: #0984e3;
+}
 
 
-
-
-
+#loginform-cotainer {
+    padding: 20px;
+    position: relative;
+    width: 302px;
+    top: 60px;
+}
 
 
 

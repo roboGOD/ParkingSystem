@@ -1,7 +1,7 @@
         
 
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1f0f66;">
-          <a class="navbar-brand" href="#">Navbar</a>
+          <a class="navbar-brand" href="#"> Parking System </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,11 +29,11 @@
               
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> Login </a>
+                    <a class="nav-link" href="login.jsp"> Login </a>
                 </li>
                 
                 <li class="nav-item">
-                    <button class="btn btn-outline-primary">  Sign Up </button>>
+                    <a class="btn btn-outline-primary" href="signup.jsp">  Sign Up </a>
                 </li>
             </ul>
               
