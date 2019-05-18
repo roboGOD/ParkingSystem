@@ -51,7 +51,7 @@ public class SignUpController extends HttpServlet {
             
             if(message.equals("Done")) {
                 String url;
-                url = "addcar.jsp";
+                url = "managecars.jsp";
                 session.invalidate();
                 session=request.getSession(true);
                 user = ud.authenticateUser(username, encryptPassword);

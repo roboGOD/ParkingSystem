@@ -14,6 +14,20 @@
               <li class="nav-item">
                 <a class="nav-link" href="#"> About </a>
               </li>
+              
+              <% if(session.getAttribute("user") != null)  { %>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Book Parking </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="managecars.jsp"> Manage Cars </a>
+              </li>
+              
+              <% } %>
+              
+              
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Dropdown

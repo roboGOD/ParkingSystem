@@ -13,10 +13,17 @@
         
         <!--  main.css  -->
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
-        
+
+        <%! pojos.User currentUser; %>
+        <%
+            currentUser = (pojos.User) session.getAttribute("user");
+        %>
         
         <!-- Navbar -->
         <%@include file="/navbar.jsp"%>
+        
+        
+        
         
         
         

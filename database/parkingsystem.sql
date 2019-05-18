@@ -26,7 +26,7 @@ CREATE TABLE `cars` (
   `SNo` int(11) NOT NULL AUTO_INCREMENT,
   `Make` varchar(50) NOT NULL,
   `Model` varchar(50) NOT NULL,
-  `Year` varchar(50) NOT NULL,
+  `Year` int(4) NOT NULL,
   `PlateNo` varchar(50) NOT NULL,
   `Username` varchar(16) NOT NULL,
   PRIMARY KEY (`SNo`),
@@ -80,4 +80,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-19  2:52:47
+-- Dump completed on 2019-05-19  3:37:07

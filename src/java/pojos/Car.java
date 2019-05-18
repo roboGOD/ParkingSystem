@@ -5,7 +5,7 @@ public class Car {
     private int sno;
     private String make;
     private String model;
-    private String year;
+    private int year;
     private String plateNo;
     private String username;
 
@@ -13,7 +13,7 @@ public class Car {
         sno = -1;
         make = "";
         model = "";
-        year = "";
+        year = 2000;
         plateNo = "";
         username = "";
     }
@@ -63,14 +63,14 @@ public class Car {
     /**
      * @return the year
      */
-    public String getYear() {
+    public int getYear() {
         return year;
     }
-
+    
     /**
      * @param year the year to set
      */
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
