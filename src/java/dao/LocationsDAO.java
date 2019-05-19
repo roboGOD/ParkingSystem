@@ -54,6 +54,45 @@ public class LocationsDAO {
         return locs;
     }
     
+    
+    
+    public pojos.Location fetchLocation(int id) {
+        pojos.Location loc = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        
+        try {
+            //Set up connection
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
+            
+            //Create the preparedstatement(s)
+            fetchStatement = conn.prepareStatement("select * from locations where ID = ?;");
+            fetchStatement.setInt(1, id);
+            rs = fetchStatement.executeQuery();
+            
+            //if we've returned a row, turn that row into a new user object
+            if (rs.next()) {
+                loc = new pojos.Location();
+                loc.setId(rs.getInt("ID"));
+                loc.setStreetAddress(rs.getString("StreetAddress"));
+                loc.setCity(rs.getString("City"));
+                loc.setPostalCode(rs.getInt("PostalCode"));
+                loc.setState(rs.getString("State"));
+                loc.setCountry(rs.getString("Country"));
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            DBUtil.close(rs);
+            DBUtil.close(fetchStatement);
+            DBUtil.close(conn);
+        }
+        return loc;
+    }
+    
+    
+    
     public void addLocation(pojos.Location loc) {
         Connection conn = null;
         ResultSet rs = null;
