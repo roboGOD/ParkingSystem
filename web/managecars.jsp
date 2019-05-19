@@ -15,18 +15,8 @@
     <body>
         <% if(currentUser != null) { %>
         <div class="body-content">
-            <a href="#" class="btn btn-primary" onclick="toggleAddCar()"> Add Car  </a>
-            <div id="addcarform" style="display: none"> 
-                <h5> Add Car </h5>
-                <form action="AddCar" method="POST"> 
-                    <input type="text" placeholder="Make" name="make"> <br>
-                    <input type="text" placeholder="Model" name="model"> <br>
-                    <input type="text" placeholder="Year" name="year" maxlength="4"> <br>
-                    <input type="text" placeholder="Plate Number" name="plateno"> <br>
-                    <input type="submit" value="Submit" class="btn btn-success">
-                </form>
-                
-            </div>
+            <h4 class="alert alert-primary"> Manage Cars </h4>
+            
         <%
         
             dao.CarsDAO cd = new dao.CarsDAO();
@@ -66,6 +56,19 @@
             </div>
         
         <% } %>
+        
+            <a href="#" class="btn btn-primary" onclick="toggleAddCar()"> Add Car  </a>
+            <div id="addcarform" style="display: none"> 
+                <h5> Add Car </h5>
+                <form action="AddCar" method="POST"> 
+                    <input type="text" placeholder="Make" name="make"> <br>
+                    <input type="text" placeholder="Model" name="model"> <br>
+                    <input type="text" placeholder="Year" name="year" maxlength="4"> <br>
+                    <input type="text" placeholder="Plate Number" name="plateno"> <br>
+                    <input type="submit" value="Submit" class="btn btn-success">
+                </form>
+                
+            </div>
         
         </div>
         <script src="js/managecars.js"> </script>

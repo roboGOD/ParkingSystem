@@ -132,5 +132,17 @@ meter[value="4"]::-moz-meter-bar { background: green; }
 
 
 
+/*****************************************/
+/*   Fill Booking Details  */
+
+#parking-slots {
+    background: url('../images/parking-slots.png') no-repeat;
+    background-size: 100% 100%;
+    width: 700px;
+    height: 504px;
+    
+}
+
+
 
 
