@@ -40,15 +40,29 @@
         <% } else { %>
         
             <div class="car-details-container">
-                
+                <table class="table table-hover">
+                    <thead class="thead text-light" style="background-color: #1f0f66;">
+                        <tr>
+                            <th> License Plate Number </th>
+                            <th> Car </th>
+                            <th> Options </th>
+                        </tr>
+                    </thead>
+                    <tbody>
                 <% for(pojos.Car car : cars) { %>
                 
-                    <div class="car-details">
-                        <span> <%=car.getYear()%> <%=car.getMake()%> <%=car.getModel()%> <%= car.getPlateNo()%> </span>
-                    </div>
+                    <tr>
+                        <td> <%= car.getPlateNo()%> </td>
+                        <td> <%=car.getYear()%> <%=car.getMake()%> <%=car.getModel()%> </td>
+                        <td> 
+                            <button class="btn btn-success"> <i class="fa fa-edit fa-lg"> </i> </button>
+                            <button class="btn btn-danger"> <i class="fa fa-times fa-lg"> </i> </button>
+                        </td>
+                    </tr>
                 
                 <% } %>
-                
+                    </tbody>
+                </table>
             </div>
         
         <% } %>
