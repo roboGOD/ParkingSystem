@@ -16,6 +16,38 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `bookings`
+--
+
+DROP TABLE IF EXISTS `bookings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bookings` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `LocationID` int(11) NOT NULL,
+  `SlotID` int(11) NOT NULL,
+  `ParkingDate` date NOT NULL,
+  `ParkingStartTime` time NOT NULL,
+  `ParkingEndTime` time NOT NULL,
+  `ParkingHours` int(11) NOT NULL,
+  `Username` varchar(16) NOT NULL,
+  `CarID` int(11) NOT NULL,
+  `BookingTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `Category` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bookings`
+--
+
+LOCK TABLES `bookings` WRITE;
+/*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `cars`
 --
 
@@ -109,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-19 23:53:00
+-- Dump completed on 2019-05-20  2:13:40

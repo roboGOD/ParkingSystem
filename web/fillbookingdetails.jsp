@@ -44,6 +44,7 @@
                 <div id="parking-slots"> 
                 
                 </div>
+                
             </div>
         </div>
     </body>
