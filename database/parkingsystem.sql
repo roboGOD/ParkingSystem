@@ -31,7 +31,7 @@ CREATE TABLE `cars` (
   `Username` varchar(16) NOT NULL,
   PRIMARY KEY (`SNo`),
   UNIQUE KEY `PlateNo` (`PlateNo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,36 @@ CREATE TABLE `cars` (
 
 LOCK TABLES `cars` WRITE;
 /*!40000 ALTER TABLE `cars` DISABLE KEYS */;
+INSERT INTO `cars` VALUES (1,'Tesla','Tesla',2016,'ZX 21 NP 2245','robogod'),(2,'Rolls Royce','Phantom',2019,'BZ 23 LM 2346','robogod');
 /*!40000 ALTER TABLE `cars` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `locations`
+--
+
+DROP TABLE IF EXISTS `locations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `locations` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `StreetAddress` varchar(100) NOT NULL,
+  `City` varchar(100) NOT NULL,
+  `PostalCode` int(11) NOT NULL,
+  `State` varchar(100) NOT NULL,
+  `Country` varchar(100) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `locations`
+--
+
+LOCK TABLES `locations` WRITE;
+/*!40000 ALTER TABLE `locations` DISABLE KEYS */;
+INSERT INTO `locations` VALUES (1,'2436 Fincham Road','Los Angeles',90017,'California','United States'),(2,'91 Graystone Lakes','Davisboro',31018,'Georgia','United States'),(3,'1875 Memory Lane','Rockford',61101,'Illinois','United States'),(4,'4601 Tecumsah Lane','Monroe',71201,'Louisiana','United States');
+/*!40000 ALTER TABLE `locations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -80,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-19  3:37:07
+-- Dump completed on 2019-05-19 23:53:00
