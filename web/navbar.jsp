@@ -18,7 +18,11 @@
               <% if(session.getAttribute("user") != null)  { %>
               
               <li class="nav-item">
-                <a class="nav-link" href="#"> Book Parking </a>
+                <a class="nav-link" href="bookparking.jsp"> Book Parking </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="viewbookings.jsp"> View Bookings </a>
               </li>
               
               <li class="nav-item">

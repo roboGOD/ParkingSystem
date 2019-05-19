@@ -107,6 +107,30 @@ meter[value="4"]::-moz-meter-bar { background: green; }
 
 
 
+/*****************************************/
+/*   Select Location  */
+
+.locations-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: solid 1px #0984e3;
+    padding: 20px;
+}
+
+.location {
+    margin: 20px;
+}
+
+.locations-container a {
+    text-decoration: none;
+}
+
+.locations-container a:hover {
+    background: #b5f2b8;
+    color: darkgreen;
+}
+
+
 
 
 
