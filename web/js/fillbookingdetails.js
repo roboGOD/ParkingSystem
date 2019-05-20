@@ -1,10 +1,8 @@
-
-
 function init() {
     $(document).ready(function() {
         
-        $("#select-slots").hide();
-        
+        $("#select-slots-form").hide();
+        $("#bookparkingsubmit").attr("disabled", true);
     });
 }
 
@@ -21,14 +19,14 @@ $("#bookingform").submit(function(event) {
         date = $form.find('input[name="date"]').val(),
         starttime = $form.find('input[name="starttime"]').val(),
         hours = $form.find('input[name="hours"]').val(),
-        category = $form.find('input[name="category"]').val(),
+        category = $form.find('input[name="category"]:checked').val(),
         vehicle = $form.find('select[name="vehicle"]').val(),
         url = $form.attr('action');
         
     var location = window.location.href.slice(window.location.href.indexOf('?') + 1).split('=')[1];
 
     /* Send the data using post */
-    var posting = $.post(
+    $.post(
         url, 
         {
             date: date,
@@ -50,23 +48,31 @@ function showSlots(data) {
     });
     
     $(document).ready(function() {
-        $("#select-slots").fadeIn(100);
+        $("#select-slots-form").fadeIn(100);
     });
 }
 
 function hideSlots() {
     $(document).ready(function() {
-        $("#select-slots").fadeOut(100);
+        $(".slot").removeClass("slot-disabled");
+        $(".slot").removeClass("slot-selected");
+        $("#select-slots-form").fadeOut(100);
     });
 }
 
+// Select Slot
 $(".slot").on('click', function(event){
     if(!$(this).hasClass("slot-disabled")) {
         if($(this).hasClass("slot-selected")) {
             $(this).removeClass("slot-selected");
+            $("#slotID").attr("value", "");
+             $("#bookparkingsubmit").attr("disabled", true);
         } else {
             $(".slot").removeClass("slot-selected");
             $(this).addClass("slot-selected");
+            var selectedslot = parseInt(($(this).attr("id")).split("-")[1]);
+            $("#slotID").attr("value", selectedslot);
+            $("#bookparkingsubmit").attr("disabled", false);
         }
     }
 });

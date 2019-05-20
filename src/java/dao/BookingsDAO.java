@@ -68,7 +68,7 @@ public class BookingsDAO {
     }
     
     
-    public void addBooking(pojos.Location loc) {
+    public void addBooking(pojos.Booking booking) {
         Connection conn = null;
         ResultSet rs = null;
         
@@ -78,14 +78,17 @@ public class BookingsDAO {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
             
             //Create the preparedstatement(s)
-            insertStatement = conn.prepareStatement("insert into locations(StreetAddress, City, PostalCode, State, Country) values(?,?,?,?,?)");
+            insertStatement = conn.prepareStatement("insert into bookings(LocationID, SlotID, ParkingDateTime, ParkingHours, Username, CarID, Category) values(?,?,?,?,?,?,?)");
 
             //Add parameters to the ?'s in the preparedstatement and execute
-            insertStatement.setString(1, loc.getStreetAddress());
-            insertStatement.setString(2, loc.getCity());
-            insertStatement.setInt(3, loc.getPostalCode());
-            insertStatement.setString(4, loc.getState());
-            insertStatement.setString(5, loc.getCountry());
+            insertStatement.setInt(1, booking.getLocationId());
+            insertStatement.setInt(2, booking.getSlotId());
+            insertStatement.setTimestamp(3, new java.sql.Timestamp(booking.getParkingDateTime().getTimeInMillis()));
+            insertStatement.setInt(4, booking.getParkingHours());
+            insertStatement.setString(5, booking.getUsername());
+            insertStatement.setInt(6, booking.getCarId());            
+            insertStatement.setString(7, booking.getCategory());
+
             insertStatement.executeUpdate();
             
           

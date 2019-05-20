@@ -42,31 +42,37 @@
                 </form>
             </div>
             
-            <div id="select-slots">
-                <div id="parking-slots"> 
-                    <div id="top-slots">
-                        <% for(int i=1; i < 10; i++) { %>
-                            <div class="slot" id="slot-<%=i%>"> </div>
-                        <% } %>
-                    </div>
-                    
-                    <div id="bottom-slots">
-                        <div id="right-slots">
-                            <div class="slot slot-inverted" id="slot-10"> </div>
-                            <div class="slot slot-inverted" id="slot-11"> </div>
-                            <div class="slot slot-inverted" id="slot-12"> </div>
+            <div id="select-slots-form">
+            <form action="AddBooking" method="post">     
+                <div id="select-slots">
+                    <div id="parking-slots"> 
+                        <div id="top-slots">
+                            <% for(int i=1; i < 10; i++) { %>
+                                <div class="slot" id="slot-<%=i%>"> </div>
+                            <% } %>
                         </div>
 
-                        <div id="left-slots">
-                            <div class="slot slot-inverted" id="slot-15"> </div>
-                            <div class="slot slot-inverted" id="slot-14"> </div>
-                            <div class="slot slot-inverted" id="slot-13"> </div>
-                        </div>
+                        <div id="bottom-slots">
+                            <div id="right-slots">
+                                <div class="slot slot-inverted" id="slot-10"> </div>
+                                <div class="slot slot-inverted" id="slot-11"> </div>
+                                <div class="slot slot-inverted" id="slot-12"> </div>
+                            </div>
 
-                        <div style="clear: both;"> </div>
-                    </div>
+                            <div id="left-slots">
+                                <div class="slot slot-inverted" id="slot-15"> </div>
+                                <div class="slot slot-inverted" id="slot-14"> </div>
+                                <div class="slot slot-inverted" id="slot-13"> </div>
+                            </div>
+
+                            <div style="clear: both;"> </div>
+                        </div>
+                    </div>   
                 </div>
-                
+                <label for="slotID"> Slot Number </label>
+                <input type="text" placeholder="Slot Number" id="slotID" name="slotID" readonly required> <br>
+                <input type="submit" id="bookparkingsubmit" class="btn btn-primary" value="Book Parking">
+            </form>
             </div>
         </div>
         
