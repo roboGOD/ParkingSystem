@@ -45,5 +45,16 @@ function showSlots() {
     });
 }
 
+$(".slot").on('click', function(event){
+    if(!$(this).hasClass("slot-disabled")) {
+        if($(this).hasClass("slot-selected")) {
+            $(this).removeClass("slot-selected");
+        } else {
+            $(".slot").removeClass("slot-selected");
+            $(this).addClass("slot-selected");
+        }
+    }
+});
+
 
 

@@ -135,14 +135,75 @@ meter[value="4"]::-moz-meter-bar { background: green; }
 /*****************************************/
 /*   Fill Booking Details  */
 
-#parking-slots {
+#select-slots {
     background: url('../images/parking-slots.png') no-repeat;
     background-size: 100% 100%;
     width: 700px;
     height: 504px;
-    
 }
 
+#parking-slots {
+    padding-top: 3px;
+}
+
+#top-slots {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}
+
+#bottom-slots {
+    position: relative;
+    top: 98px;
+}
+
+#right-slots {
+    float: right;
+    padding-right: 3px;
+}
+
+#left-slots {
+    float: left;
+    padding-left: 5px;
+}
+
+.slot {
+    width: 77px;
+    height: 160px;
+    transition: fade 0.2s;
+    border-radius: 4%;
+}
+
+.slot:hover {
+    background: #428bca;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.slot-inverted {
+    height: 77px;
+    width: 160px;
+}
+
+.slot-selected {
+    background: #5cb85c;
+    opacity: 0.8;
+}
+
+.slot-selected:hover {
+    background: #5cb85c;
+    opacity: 0.8;
+}
+
+.slot-disabled {
+    background: #d9534f;
+    opacity: 0.8;
+}
+
+.slot-disabled:hover {
+    cursor: not-allowed;
+    background: #d9534f;
+    opacity: 0.8;
+}
 
 
 
