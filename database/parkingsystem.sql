@@ -26,9 +26,7 @@ CREATE TABLE `bookings` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `LocationID` int(11) NOT NULL,
   `SlotID` int(11) NOT NULL,
-  `ParkingDate` date NOT NULL,
-  `ParkingStartTime` time NOT NULL,
-  `ParkingEndTime` time NOT NULL,
+  `ParkingDateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `ParkingHours` int(11) NOT NULL,
   `Username` varchar(16) NOT NULL,
   `CarID` int(11) NOT NULL,
@@ -141,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-20  2:13:40
+-- Dump completed on 2019-05-21  2:54:52
