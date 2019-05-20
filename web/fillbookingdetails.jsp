@@ -3,6 +3,7 @@
     Created on : 19 May, 2019, 11:49:19 PM
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,10 +18,28 @@
             <div id="bookingdetails">
                 <form id="bookingform" action="FetchSlots">
                     <label for="vehicle" > Select Vehicle: </label>
+                    <%
+        
+                        dao.CarsDAO cd = new dao.CarsDAO();
+                        ArrayList<pojos.Car> cars = cd.fetchCarsList(currentUser.getUsername());
+
+                        if(cars.size() < 1) {
+                    %>
+
+                        <script>alert("No Cars Added!!"); </script>
+                        
+
+                    <% response.sendRedirect("managecars.jsp"); } else { %>
+                    
                     <select id="vehicle" name="vehicle" required>
-                        <option> 1 </option>
-                        <option> 2 </option>
+                        <% for(pojos.Car car: cars) { %>
+                        
+                        <option value="<%=car.getSno()%>"> <%= car.getYear()%> <%= car.getMake() %> <%=car.getModel()%> (<%=car.getPlateNo()%>)  </option>
+                        
+                        <% } %>
                     </select>
+                    
+                    <% } %>
                     <br>
 
                     <label for="date"> Date: </label>
