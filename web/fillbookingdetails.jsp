@@ -30,7 +30,7 @@
                     <input type="time" id="starttime" name="starttime" required> <br>
 
                     <label for="hours"> Number of Hours: </label>
-                    <input type="text" id="hours" name="hours" required> <br>
+                    <input type="number" id="hours" name="hours" required> <br>
 
                     <input type="radio" id="premium" name="category" value="premium" required>
                     <label for="premium"> Premium </label>
@@ -54,11 +54,11 @@
                         <div id="right-slots">
                             <div class="slot slot-inverted" id="slot-10"> </div>
                             <div class="slot slot-inverted" id="slot-11"> </div>
-                            <div class="slot slot-inverted slot-selected" id="slot-12"> </div>
+                            <div class="slot slot-inverted" id="slot-12"> </div>
                         </div>
 
                         <div id="left-slots">
-                            <div class="slot slot-inverted slot-disabled" id="slot-15"> </div>
+                            <div class="slot slot-inverted" id="slot-15"> </div>
                             <div class="slot slot-inverted" id="slot-14"> </div>
                             <div class="slot slot-inverted" id="slot-13"> </div>
                         </div>

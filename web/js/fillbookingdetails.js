@@ -10,7 +10,9 @@ function init() {
 
  /* attach a submit handler to the form */
 $("#bookingform").submit(function(event) {
-
+    
+    hideSlots();
+    
     /* stop form from submitting normally */
     event.preventDefault();
 
@@ -22,26 +24,38 @@ $("#bookingform").submit(function(event) {
         category = $form.find('input[name="category"]').val(),
         vehicle = $form.find('select[name="vehicle"]').val(),
         url = $form.attr('action');
+        
+    var location = window.location.href.slice(window.location.href.indexOf('?') + 1).split('=')[1];
 
     /* Send the data using post */
-    var posting = $.post(url, {
-        date: date,
-        starttime: starttime,
-        hours: hours,
-        category: category,
-        vehicle: vehicle
-    });
-
-    /* Put the results in a div */
-    posting.done(function(data) {
-        showSlots();
-    });
+    var posting = $.post(
+        url, 
+        {
+            date: date,
+            starttime: starttime,
+            hours: hours,
+            category: category,
+            vehicle: vehicle,
+            location: location
+        },
+        function(data) {
+            showSlots();
+        },
+        'json'
+    );
 });
 
 
 function showSlots() {
     $(document).ready(function() {
-        $("#select-slots").slideDown(100);
+
+        $("#select-slots").fadeIn(100);
+    });
+}
+
+function hideSlots() {
+    $(document).ready(function() {
+        $("#select-slots").fadeOut(100);
     });
 }
 
