@@ -12,6 +12,10 @@
         <servlet-name>AddCarController</servlet-name>
         <servlet-class>controllers.AddCarController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FetchSlotsController</servlet-name>
+        <servlet-class>controllers.FetchSlotsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>AddCarController</servlet-name>
         <url-pattern>/AddCar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FetchSlotsController</servlet-name>
+        <url-pattern>/FetchSlots</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

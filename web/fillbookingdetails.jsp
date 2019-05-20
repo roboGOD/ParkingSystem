@@ -11,41 +11,52 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Book Parking </title>
     </head>
-    <body>
+    <body onload="init()">
         <div class="body-content">
             <h4 class="alert alert-primary"> Fill Booking Details </h4>
             <div id="bookingdetails">
-                
-                <label for="vehicle" > Select Vehicle: </label>
-                <select id="vehicle" name="vehicle">
-                    <option> 1 </option>
-                    <option> 2 </option>
-                </select>
-                <br>
-                
-                <label for="date"> Date: </label>
-                <input type="date" id="date" name="date"> <br>
-                
-                <label for="starttime"> Parking Time: </label>
-                <input type="time" id="starttime" name="starttime"> <br>
-                
-                <label for="hours"> Number of Hours: </label>
-                <input type="text" id="hours" name="hours"> <br>
-                
-                <input type="radio" id="premium" name="category" value="premium">
-                <label for="premium"> Premium </label>
-                
-                <input type="radio" id="economy" name="category" value="economy">   
-                <label for="economy"> Economy </label>      
-                
+                <form id="bookingform" action="FetchSlots">
+                    <label for="vehicle" > Select Vehicle: </label>
+                    <select id="vehicle" name="vehicle" required>
+                        <option> 1 </option>
+                        <option> 2 </option>
+                    </select>
+                    <br>
+
+                    <label for="date"> Date: </label>
+                    <input type="date" id="date" name="date" required> <br>
+
+                    <label for="starttime"> Parking Time: </label>
+                    <input type="time" id="starttime" name="starttime" required> <br>
+
+                    <label for="hours"> Number of Hours: </label>
+                    <input type="text" id="hours" name="hours" required> <br>
+
+                    <input type="radio" id="premium" name="category" value="premium" required>
+                    <label for="premium"> Premium </label>
+
+                    <input type="radio" id="economy" name="category" value="economy" required>   
+                    <label for="economy"> Economy </label> <br>
+                    
+                    <input type="submit" value="Select Slot" class="btn btn-outline-primary" >
+                </form>
             </div>
-            <button class="btn btn-outline-primary" > Select Slot </button>
-            <div id="selectslots">
+            
+            <div id="select-slots">
                 <div id="parking-slots"> 
-                
+                    <div id="top-slots"> 
+                    </div>
+                    
+                    <div id="right-slots"> 
+                    </div>
+                    
+                    <div id="left-slots">
+                    </div>
                 </div>
                 
             </div>
         </div>
+        
+        <script src="js/fillbookingdetails.js"> </script>
     </body>
 </html>
