@@ -33,7 +33,7 @@ CREATE TABLE `bookings` (
   `BookingTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Category` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
+INSERT INTO `bookings` VALUES (1,3,1,'2019-05-23 22:29:00',2,'robogod',1,'2019-05-20 22:30:18','premium'),(2,3,4,'2019-05-24 22:42:00',2,'robogod',1,'2019-05-20 22:37:29','premium'),(3,3,2,'2019-05-23 22:49:00',2,'robogod',1,'2019-05-20 22:41:44','economy');
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,4 +140,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-21  2:54:52
+-- Dump completed on 2019-05-21  4:12:36
