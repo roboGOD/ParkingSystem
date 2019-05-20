@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import com.google.gson.Gson;
 
 /**
  *
@@ -69,6 +70,10 @@ public class FetchSlotsController extends HttpServlet {
             
             dao.BookingsDAO bd = new dao.BookingsDAO();
             ArrayList<Integer> slots = bd.fetchBookedSlots(booking);
+            slots.add(1);
+            slots.add(15);
+            
+            res = new Gson().toJson(slots);
             
             out.print(res);
             out.flush();

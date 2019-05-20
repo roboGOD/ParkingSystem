@@ -38,17 +38,18 @@ $("#bookingform").submit(function(event) {
             vehicle: vehicle,
             location: location
         },
-        function(data) {
-            showSlots();
-        },
+        showSlots,
         'json'
     );
 });
 
 
-function showSlots() {
+function showSlots(data) {
+    data.forEach(function(item) {
+        $("#slot-"+item).addClass("slot-disabled");
+    });
+    
     $(document).ready(function() {
-
         $("#select-slots").fadeIn(100);
     });
 }
