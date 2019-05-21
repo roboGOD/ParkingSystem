@@ -27,18 +27,34 @@ public class EditCarController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            pojos.Car car = new pojos.Car();
             
-            car.setSno(Integer.parseInt(request.getParameter("sno")));
-            car.setMake(request.getParameter("make"));
-            car.setModel(request.getParameter("model"));
-            car.setYear(Integer.parseInt(request.getParameter("year")));
-            car.setPlateNo(request.getParameter("plateno"));
+            HttpSession session = request.getSession();
+            pojos.User user = (pojos.User) session.getAttribute("user");
             
-            dao.CarsDAO cd = new dao.CarsDAO();
-            cd.updateCar(car);
-            
-            response.sendRedirect("managecars.jsp");
+            if(user != null) {
+                pojos.Car car = new pojos.Car();
+
+                car.setSno(Integer.parseInt(request.getParameter("sno")));
+                car.setMake(request.getParameter("make"));
+                car.setModel(request.getParameter("model"));
+                car.setYear(Integer.parseInt(request.getParameter("year")));
+                car.setPlateNo(request.getParameter("plateno"));
+
+                dao.CarsDAO cd = new dao.CarsDAO();
+                cd.updateCar(car);
+
+                response.sendRedirect("managecars.jsp");
+            } else {
+                session.invalidate();
+                out.write("<h3> Some error has occurred! </h3> <br>");
+                out.write("Redirecting... <br>");
+                String uri = request.getContextPath()+"/index.jsp";
+                
+                String url = request.getScheme() + "://" +
+                        request.getServerName() +
+                        ("http".equals(request.getScheme()) && request.getServerPort() == 80 || "https".equals(request.getScheme()) && request.getServerPort() == 443 ? "" : ":" + request.getServerPort() ) +uri;
+                response.setHeader("Refresh", "3; URL="+url);
+            }
         }
     }
 

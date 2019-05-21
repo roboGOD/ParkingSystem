@@ -31,16 +31,28 @@ public class AddCarController extends HttpServlet {
             pojos.User user = (pojos.User) session.getAttribute("user");
             pojos.Car car = new pojos.Car();
             
-            car.setMake(request.getParameter("make"));
-            car.setModel(request.getParameter("model"));
-            car.setYear(Integer.parseInt(request.getParameter("year")));
-            car.setPlateNo(request.getParameter("plateno"));
-            car.setUsername(user.getUsername());
-            
-            dao.CarsDAO cd = new dao.CarsDAO();
-            cd.addCar(car);
-            
-            response.sendRedirect("managecars.jsp");
+            if(user != null) {
+                car.setMake(request.getParameter("make"));
+                car.setModel(request.getParameter("model"));
+                car.setYear(Integer.parseInt(request.getParameter("year")));
+                car.setPlateNo(request.getParameter("plateno"));
+                car.setUsername(user.getUsername());
+
+                dao.CarsDAO cd = new dao.CarsDAO();
+                cd.addCar(car);
+
+                response.sendRedirect("managecars.jsp");
+            } else {
+                session.invalidate();
+                out.write("<h3> Some error has occurred! </h3> <br>");
+                out.write("Redirecting... <br>");
+                String uri = request.getContextPath()+"/index.jsp";
+                
+                String url = request.getScheme() + "://" +
+                        request.getServerName() +
+                        ("http".equals(request.getScheme()) && request.getServerPort() == 80 || "https".equals(request.getScheme()) && request.getServerPort() == 443 ? "" : ":" + request.getServerPort() ) +uri;
+                response.setHeader("Refresh", "3; URL="+url);
+            }
         }
     }
 

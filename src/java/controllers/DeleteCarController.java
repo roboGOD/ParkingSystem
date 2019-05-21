@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -27,12 +28,27 @@ public class DeleteCarController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            int sno = (Integer.parseInt(request.getParameter("sno")));
+            HttpSession session = request.getSession();
+            pojos.User user = (pojos.User) session.getAttribute("user");
             
-            dao.CarsDAO cd = new dao.CarsDAO();
-            cd.deleteCar(sno);
-            
-            response.sendRedirect("managecars.jsp");
+            if(user != null) {
+                int sno = (Integer.parseInt(request.getParameter("sno")));
+
+                dao.CarsDAO cd = new dao.CarsDAO();
+                cd.deleteCar(sno);
+
+                response.sendRedirect("managecars.jsp");
+            } else {
+                session.invalidate();
+                out.write("<h3> Some error has occurred! </h3> <br>");
+                out.write("Redirecting... <br>");
+                String uri = request.getContextPath()+"/index.jsp";
+                
+                String url = request.getScheme() + "://" +
+                        request.getServerName() +
+                        ("http".equals(request.getScheme()) && request.getServerPort() == 80 || "https".equals(request.getScheme()) && request.getServerPort() == 443 ? "" : ":" + request.getServerPort() ) +uri;
+                response.setHeader("Refresh", "3; URL="+url);
+            }
         }
     }
 
