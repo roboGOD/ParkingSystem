@@ -13,6 +13,7 @@ public class CarsDAO {
     
     private PreparedStatement fetchStatement;
     private PreparedStatement insertStatement;
+    private PreparedStatement deleteStatement;
     
     public ArrayList<pojos.Car> fetchCarsList(String username) {
         ArrayList<pojos.Car> cars = new ArrayList<>();
@@ -80,6 +81,64 @@ public class CarsDAO {
         } finally {
             DBUtil.close(rs);
             DBUtil.close(insertStatement);
+            DBUtil.close(conn);
+        }
+    }
+    
+    
+    public void updateCar(pojos.Car car) {
+        Connection conn = null;
+        ResultSet rs = null;
+        
+        try {
+            //Set up connection
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
+            
+            //Create the preparedstatement(s)
+            insertStatement = conn.prepareStatement("update cars set Make=?, Model=?, Year=?, PlateNo=? where SNo = ?");
+
+            //Add parameters to the ?'s in the preparedstatement and execute
+            insertStatement.setString(1, car.getMake());
+            insertStatement.setString(2, car.getModel());
+            insertStatement.setInt(3, car.getYear());
+            insertStatement.setString(4, car.getPlateNo());
+            insertStatement.setInt(5, car.getSno());
+            insertStatement.executeUpdate();
+            
+          
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            DBUtil.close(rs);
+            DBUtil.close(insertStatement);
+            DBUtil.close(conn);
+        }
+    }
+    
+    public void deleteCar(int sno) {
+        Connection conn = null;
+        ResultSet rs = null;
+        
+        try {
+            //Set up connection
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
+            
+            //Create the preparedstatement(s)
+            deleteStatement = conn.prepareStatement("delete from cars where SNo = ?");
+
+            //Add parameters to the ?'s in the preparedstatement and execute
+            
+            deleteStatement.setInt(1, sno);
+            deleteStatement.executeUpdate();
+            
+          
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            DBUtil.close(rs);
+            DBUtil.close(deleteStatement);
             DBUtil.close(conn);
         }
     }

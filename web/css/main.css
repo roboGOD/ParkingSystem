@@ -205,5 +205,56 @@ meter[value="4"]::-moz-meter-bar { background: green; }
     opacity: 0.8;
 }
 
+/*****************************************/
+/*   Full Screen Background  */
 
+.full-screen-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 10;
+}
+
+.full-screen-background .input-box, .full-screen-background .confirm-box {
+    width: 40%;
+    height: 350px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    opacity: 1;
+    z-index: 11;
+    padding: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.full-screen-background .confirm-box {
+    width: 32%;
+    height: 170px;
+    padding: 50px;
+    padding-top: 20px;
+}
+
+.full-screen-background .input-box .text {
+    width: 100%;
+}
+
+.full-screen-background input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.full-screen-background .my-btn {
+    float: right;
+    margin-left: 10px;
+}
+
+.full-screen-background .confirm-box .my-btn {
+    margin-top: 40px;
+}
 

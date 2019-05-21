@@ -20,6 +20,14 @@
         <servlet-name>AddBookingController</servlet-name>
         <servlet-class>controllers.AddBookingController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditCarController</servlet-name>
+        <servlet-class>controllers.EditCarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCarController</servlet-name>
+        <servlet-class>controllers.DeleteCarController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>AddBookingController</servlet-name>
         <url-pattern>/AddBooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditCarController</servlet-name>
+        <url-pattern>/EditCar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCarController</servlet-name>
+        <url-pattern>/DeleteCar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
