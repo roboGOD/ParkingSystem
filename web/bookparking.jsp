@@ -23,7 +23,7 @@
 
         %>
         <div class="body-content">
-            <h4 class="alert alert-info"> Select a Region! </h4>
+            <h4 class="alert alert-primary"> Select a Region! </h4>
             <div class="locations-container">
             <%
                 dao.LocationsDAO ld = new dao.LocationsDAO();
