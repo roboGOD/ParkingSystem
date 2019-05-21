@@ -4,6 +4,40 @@ function init() {
         $("#select-slots-form").hide();
         $("#bookparkingsubmit").attr("disabled", true);
     });
+    
+    $(function(){
+        var dtToday = new Date();
+
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
+
+        var maxDate = year + '-' + month + '-' + day;
+        $('#date').attr('min', maxDate);
+    });
+    
+   setTimeLimit();
+}
+
+function setTimeLimit() {
+    $(function(){
+        var today = new Date();
+        var hours = today.getHours() ;
+        var mins = today.getMinutes();
+        
+        if(hours < 10)
+            hours = '0'+hours.toString();
+        if(mins < 10)
+            mins = '0' + mins.toString();
+        
+        var time = hours + ":" + mins;
+        
+        $('#starttime').attr('min', time);
+    });
 }
 
  /* attach a submit handler to the form */
@@ -78,6 +112,8 @@ $(".slot").on('click', function(event){
         }
     }
 });
+
+
 
 
 

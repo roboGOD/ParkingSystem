@@ -44,7 +44,7 @@
                     <input type="date" id="date" name="date" required> <br>
 
                     <label for="starttime" class="my-label"> Parking Time: </label>
-                    <input type="time" id="starttime" name="starttime" required> <br>
+                    <input type="time" id="starttime" name="starttime" onfocus="setTimeLimit()" required> <br>
 
                     <label for="hours" class="my-label"> Number of Hours: </label>
                     <input type="number" id="hours" min="1" max="72" name="hours" required> <br>
