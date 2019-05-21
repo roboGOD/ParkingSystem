@@ -23,13 +23,11 @@
                         dao.CarsDAO cd = new dao.CarsDAO();
                         ArrayList<pojos.Car> cars = cd.fetchCarsList(currentUser.getUsername());
 
-                        if(cars.size() < 1) {
+                        if(cars.size() < 1) 
+                            response.sendRedirect("managecars.jsp");  
+                        else { 
+                    
                     %>
-
-                        <script>alert("No Cars Added!!"); </script>
-                        
-
-                    <% response.sendRedirect("managecars.jsp"); } else { %>
                     
                     <select id="vehicle" name="vehicle" required>
                         <% for(pojos.Car car: cars) { %>

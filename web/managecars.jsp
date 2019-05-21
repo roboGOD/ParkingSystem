@@ -15,7 +15,7 @@
     <body>
         <% if(currentUser != null) { %>
         <div class="body-content">
-            <h4 class="alert alert-primary"> <a href="#/" style="float: right; margin: 0px;" class="btn btn-primary btn-sm" onclick="addCar()"> Add Car  </a> Manage Cars </h4>
+            <h4 class="alert alert-primary"> Manage Cars </h4>
             
         <%
         
@@ -66,6 +66,8 @@
             </div>
         
         <% } %>
+        
+        <a href="#/" style="float: right;" class="btn btn-primary" onclick="addCar()"> Add Car  </a>
         
         </div>
         

@@ -67,6 +67,49 @@ public class BookingsDAO {
         return slots;
     }
     
+    public ArrayList<pojos.Booking> fetchUserBookings(String username) {
+        ArrayList<pojos.Booking> bookings = new ArrayList<>();
+        
+        pojos.Booking booking;
+        Connection conn = null;
+        ResultSet rs = null;
+        
+        try {
+            //Set up connection
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
+            
+            //Create the preparedstatement(s)
+            fetchStatement = conn.prepareStatement("select * from bookings where Username=?;");
+            fetchStatement.setString(1, username);
+
+            rs = fetchStatement.executeQuery();
+            
+            //if we've returned a row, turn that row into a new user object
+            while (rs.next()) {
+                booking = new pojos.Booking(
+                        rs.getInt("ID"), 
+                        rs.getInt("LocationID"), 
+                        rs.getInt("SlotID"), 
+                        rs.getTimestamp("ParkingDateTime").getTime(), 
+                        rs.getInt("ParkingHours"), 
+                        rs.getString("Username"), 
+                        rs.getInt("CarID"), 
+                        rs.getString("Category"), 
+                        rs.getTimestamp("BookingTime").getTime());
+                
+                bookings.add(booking);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            DBUtil.close(rs);
+            DBUtil.close(fetchStatement);
+            DBUtil.close(conn);
+        }
+        return bookings;
+    }
+    
     
     public void addBooking(pojos.Booking booking) {
         Connection conn = null;

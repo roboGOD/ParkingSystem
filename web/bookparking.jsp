@@ -13,6 +13,15 @@
         <title> Book Parking </title>
     </head>
     <body>
+        <% 
+            dao.CarsDAO cd = new dao.CarsDAO();
+            ArrayList<pojos.Car> cars = cd.fetchCarsList(currentUser.getUsername());
+
+            if(cars.size() < 1) 
+                response.sendRedirect("managecars.jsp");  
+            else { 
+
+        %>
         <div class="body-content">
             <h4 class="alert alert-info"> Select a Region! </h4>
             <div class="locations-container">
@@ -32,5 +41,6 @@
             <% } %>
             </div>
         </div>
+        <% } %>
     </body>
 </html>
