@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
+import java.util.HashSet;
 
 /**
  *
@@ -75,6 +76,9 @@ public class FetchSlotsController extends HttpServlet {
             
             out.print(res);
             out.flush();
+            
+            HashSet<Integer> hashSlots = new HashSet<>(slots);
+            session.setAttribute("bookedSlots", hashSlots);
         }
     }
 

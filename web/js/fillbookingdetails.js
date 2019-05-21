@@ -24,20 +24,20 @@ function init() {
 }
 
 function setTimeLimit() {
-    $(function(){
-        var today = new Date();
-        var hours = today.getHours() ;
-        var mins = today.getMinutes();
-        
-        if(hours < 10)
-            hours = '0'+hours.toString();
-        if(mins < 10)
-            mins = '0' + mins.toString();
-        
-        var time = hours + ":" + mins;
-        
-        $('#starttime').attr('min', time);
-    });
+//    $(function(){
+//        var today = new Date();
+//        var hours = today.getHours() ;
+//        var mins = today.getMinutes();
+//        
+//        if(hours < 10)
+//            hours = '0'+hours.toString();
+//        if(mins < 10)
+//            mins = '0' + mins.toString();
+//        
+//        var time = hours + ":" + mins;
+//        
+//        $('#starttime').attr('min', time);
+//    });
 }
 
  /* attach a submit handler to the form */

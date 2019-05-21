@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashSet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,13 +31,28 @@ public class AddBookingController extends HttpServlet {
             HttpSession session = request.getSession();
             int slotID = Integer.parseInt(request.getParameter("slotID"));
             
-            pojos.Booking booking = (pojos.Booking) session.getAttribute("currentBooking");
-            booking.setSlotId(slotID);
+            HashSet<Integer> slots = (HashSet<Integer>) session.getAttribute("bookedSlots");
             
-            dao.BookingsDAO bd = new dao.BookingsDAO();
-            bd.addBooking(booking);
+            if(!slots.contains(slotID)) {
+                pojos.Booking booking = (pojos.Booking) session.getAttribute("currentBooking");
+                booking.setSlotId(slotID);
             
-            response.sendRedirect("index.jsp");
+                dao.BookingsDAO bd = new dao.BookingsDAO();
+                bd.addBooking(booking);
+            
+                response.sendRedirect("index.jsp");
+            } else {
+                session.invalidate();
+                out.write("<h3> Error! Slot is Already Booked! </h3> <br>");
+                out.write("Redirecting... <br>");
+                String uri = request.getContextPath()+"/index.jsp";
+                
+                String url = request.getScheme() + "://" +
+                        request.getServerName() +
+                        ("http".equals(request.getScheme()) && request.getServerPort() == 80 || "https".equals(request.getScheme()) && request.getServerPort() == 443 ? "" : ":" + request.getServerPort() ) +uri;
+                response.setHeader("Refresh", "5; URL="+url);
+                
+            }
         }
     }
 

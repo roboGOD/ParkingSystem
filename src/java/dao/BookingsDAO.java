@@ -80,7 +80,7 @@ public class BookingsDAO {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
             
             //Create the preparedstatement(s)
-            fetchStatement = conn.prepareStatement("select * from bookings where Username=?;");
+            fetchStatement = conn.prepareStatement("select * from bookings where Username=? ORDER BY BookingTime DESC;");
             fetchStatement.setString(1, username);
 
             rs = fetchStatement.executeQuery();
