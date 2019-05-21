@@ -17,12 +17,12 @@
 
                 <% if(session.getAttribute("errorMessage") != null) { %>    
 
-                <span id="alertError" class='alert alert-danger'> ${errorMessage} </span>
+                <div id="alertError" class='alert alert-danger'> ${errorMessage} </div>
 
                 <% } %>
-                <br>
+
                 <form action="Login" method="post">
-                    <h3 id="login-text">Log In</h3> <br>
+                    <h3 id="login-text">Login</h3> <br>
                         <div class="input-group">
                             <span class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user-o fa-lg"></i></span></span>
                             <input type="text" name="Username" maxlength="16" class="form-control" placeholder="Username" required>
@@ -38,3 +38,4 @@
         </div>
     </body>
 </html>
+<% session.removeAttribute("errorMessage"); %>

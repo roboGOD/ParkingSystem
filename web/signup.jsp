@@ -16,9 +16,8 @@
             <div id="signupform">
                 
                 <% if(session.getAttribute("errorMessage") != null) { %>
-                    <span class="alertError" class='alert alert-danger'>  ${errorMessage} </span>
+                    <div class="alertError" class='alert alert-danger'>  ${errorMessage} </div>
                 <% } %>
-                <br>
                 <form  action="SignUp" method="post" onsubmit="return isValidated();">
                     <h3 id="signup-text"> Sign Up </h3><br>
                     <div class="input-group">
@@ -65,3 +64,4 @@
         <script src="js/signup.js"> </script>
     </body>
 </html>
+<% session.removeAttribute("errorMessage"); %>

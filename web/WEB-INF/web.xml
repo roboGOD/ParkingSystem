@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>IsLoggedInFilter</filter-name>
+        <filter-class>filters.IsLoggedInFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>IsLoggedInFilter</filter-name>
+        <url-pattern>/bookparking.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>IsLoggedInFilter</filter-name>
+        <url-pattern>/fillbookingdetails.jsp</url-pattern>
+        <url-pattern>/managecars.jsp</url-pattern>
+        <url-pattern>/viewbookings.jsp</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginController</servlet-name>
         <servlet-class>controllers.LoginController</servlet-class>

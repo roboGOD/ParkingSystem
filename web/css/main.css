@@ -102,7 +102,11 @@ meter[value="4"]::-moz-meter-bar { background: green; }
     padding: 20px;
     position: relative;
     width: 400px;
-    top: 60px;
+    top: 30px;
+}
+
+#loginform-cotainer #alertError {
+    
 }
 
 
