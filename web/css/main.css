@@ -214,6 +214,34 @@ meter[value="4"]::-moz-meter-bar { background: green; }
     opacity: 0.8;
 }
 
+
+#bookingform .my-label {
+    display: inline-block;
+    width: 200px;
+}
+
+#bookingform input {
+    margin-top: 12px;
+}
+
+#bookingform #category {
+    display: inline-block;
+}
+
+#select-slots-form {
+    position: relative;
+    top: 12px;
+}
+
+
+#select-slots-form input[type="submit"] {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+
+
 /*****************************************/
 /*   Full Screen Background  */
 

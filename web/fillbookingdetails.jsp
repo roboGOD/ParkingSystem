@@ -17,7 +17,7 @@
             <h4 class="alert alert-primary"> Fill Booking Details </h4>
             <div id="bookingdetails">
                 <form id="bookingform" action="FetchSlots">
-                    <label for="vehicle" > Select Vehicle: </label>
+                    <label for="vehicle"  class="my-label"> Select Vehicle: </label>
                     <%
         
                         dao.CarsDAO cd = new dao.CarsDAO();
@@ -40,22 +40,25 @@
                     <% } %>
                     <br>
 
-                    <label for="date"> Date: </label>
+                    <label for="date" class="my-label"> Date: </label>
                     <input type="date" id="date" name="date" required> <br>
 
-                    <label for="starttime"> Parking Time: </label>
+                    <label for="starttime" class="my-label"> Parking Time: </label>
                     <input type="time" id="starttime" name="starttime" required> <br>
 
-                    <label for="hours"> Number of Hours: </label>
-                    <input type="number" id="hours" name="hours" required> <br>
+                    <label for="hours" class="my-label"> Number of Hours: </label>
+                    <input type="number" id="hours" min="1" max="72" name="hours" required> <br>
 
-                    <input type="radio" id="premium" name="category" value="premium" required>
-                    <label for="premium"> Premium </label>
+                    <label for="category" class="my-label"> Category: </label>
+                    <div id="category">
+                        <input type="radio" id="premium" name="category" value="premium" required>
+                        <label for="premium"> Premium </label>
 
-                    <input type="radio" id="economy" name="category" value="economy" required>   
-                    <label for="economy"> Economy </label> <br>
+                        <input type="radio" id="economy" name="category" value="economy" required>   
+                        <label for="economy"> Economy </label> 
+                    </div> <br>
                     
-                    <input type="submit" value="Select Slot" class="btn btn-outline-primary" >
+                    <input type="submit" value="Select Slot" class="btn btn-primary" >
                 </form>
             </div>
             
@@ -86,8 +89,7 @@
                         </div>
                     </div>   
                 </div>
-                <label for="slotID"> Slot Number </label>
-                <input type="text" placeholder="Slot Number" id="slotID" name="slotID" readonly required> <br>
+                <input type="text" placeholder="Slot Number" id="slotID" name="slotID" hidden required>
                 <input type="submit" id="bookparkingsubmit" class="btn btn-primary" value="Book Parking">
             </form>
             </div>

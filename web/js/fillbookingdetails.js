@@ -50,6 +50,8 @@ function showSlots(data) {
     $(document).ready(function() {
         $("#select-slots-form").fadeIn(100);
     });
+    
+    $("html, body").animate({ scrollTop: $(document).height() }, 500);
 }
 
 function hideSlots() {
