@@ -29,14 +29,11 @@ public class AddBookingController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             HttpSession session = request.getSession();
-            int slotID = Integer.parseInt(request.getParameter("slotID"));
+            pojos.Booking booking = (pojos.Booking) session.getAttribute("currentBooking");
             
             HashSet<Integer> slots = (HashSet<Integer>) session.getAttribute("bookedSlots");
             
-            if(!slots.contains(slotID)) {
-                pojos.Booking booking = (pojos.Booking) session.getAttribute("currentBooking");
-                booking.setSlotId(slotID);
-            
+            if(!slots.contains(booking.getSlotId())) {      
                 dao.BookingsDAO bd = new dao.BookingsDAO();
                 bd.addBooking(booking);
             
