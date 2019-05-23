@@ -63,7 +63,7 @@
             </div>
             
             <div id="select-slots-form">
-            <form action="AddBooking" method="post">     
+            <form action="confirmbooking.jsp" method="post">     
                 <div id="select-slots">
                     <div id="parking-slots"> 
                         <div id="top-slots">

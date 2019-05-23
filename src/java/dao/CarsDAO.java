@@ -55,6 +55,43 @@ public class CarsDAO {
         return cars;
     }
     
+    public pojos.Car fetchCar(int carID) {
+        pojos.Car car = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        
+        try {
+            //Set up connection
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
+            
+            //Create the preparedstatement(s)
+            fetchStatement = conn.prepareStatement("select * from cars where Sno=?");
+
+            //Add parameters to the ?'s in the preparedstatement and execute
+            fetchStatement.setInt(1, carID);
+            rs = fetchStatement.executeQuery();
+            
+            //if we've returned a row, turn that row into a new user object
+            if (rs.next()) {
+                car = new pojos.Car();
+                car.setSno(rs.getInt("SNo"));
+                car.setMake(rs.getString("Make"));
+                car.setModel(rs.getString("Model"));
+                car.setYear(rs.getInt("Year"));
+                car.setPlateNo(rs.getString("PlateNo"));
+                car.setUsername(rs.getString("Username"));
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            DBUtil.close(rs);
+            DBUtil.close(fetchStatement);
+            DBUtil.close(conn);
+        }
+        return car;
+    }
+    
     public void addCar(pojos.Car car) {
         Connection conn = null;
         ResultSet rs = null;
