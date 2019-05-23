@@ -67,22 +67,42 @@
                 <div id="select-slots">
                     <div id="parking-slots"> 
                         <div id="top-slots">
-                            <% for(int i=1; i < 10; i++) { %>
-                                <div class="slot" id="slot-<%=i%>"> </div>
+                            <% for(int i=1; i <= 22  ; i++) { %>
+                                <div class="slot" id="slot-<%=i%>"> <%=i%> </div>
                             <% } %>
                         </div>
 
                         <div id="bottom-slots">
-                            <div id="right-slots">
-                                <div class="slot slot-inverted" id="slot-10"> </div>
-                                <div class="slot slot-inverted" id="slot-11"> </div>
-                                <div class="slot slot-inverted" id="slot-12"> </div>
+                            <div id="rightmost-slots">
+                                <% for(int i=23; i <= 34  ; i++) { %>
+                                    <div class="slot slot-inverted" id="slot-<%=i%>"> <%=i%> </div>
+                                <% } %>
                             </div>
 
-                            <div id="left-slots">
-                                <div class="slot slot-inverted" id="slot-15"> </div>
-                                <div class="slot slot-inverted" id="slot-14"> </div>
-                                <div class="slot slot-inverted" id="slot-13"> </div>
+                            <div id="double-slots-container">
+                                <div class="double-slots" id="double-slots-1">
+                                    <div class="double-slots-grid"> 
+                                    <% for(int i=35; i <= 58  ; i++) { %>
+                                        <div class="slot slot-inverted" id="slot-<%=i%>"> <%=i%> </div>
+                                    <% } %>
+                                    </div>
+                                </div>
+                                
+                                <div class="double-slots"  id="double-slots-2"> 
+                                    <div class="double-slots-grid">
+                                    <% for(int i=59; i <= 82  ; i++) { %>
+                                        <div class="slot slot-inverted" id="slot-<%=i%>"> <%=i%> </div>
+                                    <% } %>
+                                    </div>
+                                </div>
+                                
+                                <div class="double-slots"  id="double-slots-3"> 
+                                    <div class="double-slots-grid">
+                                    <% for(int i=83; i <= 106  ; i++) { %>
+                                        <div class="slot slot-inverted" id="slot-<%=i%>"> <%=i%> </div>
+                                    <% } %>
+                                    </div>
+                                </div>
                             </div>
 
                             <div style="clear: both;"> </div>
