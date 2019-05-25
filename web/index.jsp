@@ -13,6 +13,7 @@
     </head>
     <body>
         <div class="body-content body-content-nobackground">
+            <h4 class='alert alert-primary'> Parking System </h4>
         </div>
     </body>
 </html>
