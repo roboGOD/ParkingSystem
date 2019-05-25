@@ -34,12 +34,21 @@
                             <th> # Hours </th>
                             <th> CarID </th>
                             <th> Category </th>
+                            <th> Charges </th>
                             <th> Booking Date </th>
                         </tr>
                     </thead>
                     <tbody >
                     <% for(pojos.Booking booking : bookings) { %>
 
+                    <%
+        
+                        dao.ChargesDAO chd = new dao.ChargesDAO();
+                        int pricePerHour = chd.getPricePerHour(booking.getCategory());
+                        
+                        int total = pricePerHour * booking.getParkingHours();
+                        
+                    %>
                         <tr >
                             <td> <%=booking.getId()%> </td>
                             <td> <%=booking.getLocationId()%> </td>
@@ -48,6 +57,7 @@
                             <td> <%=booking.getParkingHours()%> </td>
                             <td> <%=booking.getCarId()%> </td>
                             <td> <%=booking.getCategory()%> </td>
+                            <td> ₹ <%=total%> </td>
                             <td> <%=new SimpleDateFormat("MMM dd yyyy HH:mm a ").format(booking.getBookingTime().getTime())%> </td>
                         </tr>
 
