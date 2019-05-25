@@ -13,7 +13,7 @@
         <title> Book Parking </title>
     </head>
     <body onload="init()" class="body-texture">
-        <div class="body-content">
+        <div class="body-content body-content-nobackground">
             <h4 class="alert alert-primary"> Fill Booking Details </h4>
             <div id="bookingdetails">
                 <form id="bookingform" action="FetchSlots">

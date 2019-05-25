@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Manage Cars </title>
     </head>
-    <body>
+    <body class="body-texture">
         <% if(currentUser != null) { %>
         <div class="body-content body-content-nobackground">
             <h4 class="alert alert-primary"> Manage Cars </h4>

@@ -13,7 +13,11 @@
     </head>
     <body>
         <div class="body-content body-content-nobackground">
-            <h4 class='alert alert-primary'> Parking System </h4>
+            <% if(currentUser != null) { %>
+                <h4 class='alert alert-primary'> Welcome <%=currentUser.getUsername()%>! </h4>
+            <% } else { %>
+                <h5 class='alert alert-primary'> Login to book parking slot. </h5>
+            <% } %>
         </div>
     </body>
 </html>

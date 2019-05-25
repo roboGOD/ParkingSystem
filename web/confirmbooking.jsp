@@ -12,8 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Confirm Booking </title>
     </head>
-    <body>
-        <div class="body-content">
+    <body class='body-texture'>
+        <div class="body-content body-content-border">
             <%! pojos.Booking booking;%>
             <%
                 booking = (pojos.Booking) session.getAttribute("currentBooking");

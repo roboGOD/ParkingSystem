@@ -24,6 +24,20 @@ body {
     background: none;
 }
 
+.body-content-border {
+    background: none;
+    border: solid 1px cyan;
+    border-radius: 3%;
+    transition: 0.2s;
+}
+
+.body-content-border:hover {
+    top: 3px;
+    font-size: 17px;
+}
+
+
+
 .body-content-wider {
     max-width: 1000px;
     left: 50%;
