@@ -12,6 +12,7 @@ public class UsersDAO {
     private PreparedStatement authenticateUserStatement;
     private PreparedStatement signUpUserStatement;
     private PreparedStatement checkEmail;
+    private PreparedStatement fetchUserStatement;
     
     
     /**
@@ -93,5 +94,40 @@ public class UsersDAO {
         }
         
         return message;
+    }
+    
+    
+    public User fetchUser(String username) {
+        User user = null;
+        Connection conn = null;
+        ResultSet rs = null;
+        
+        try {
+            //Set up connection
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/parkingsystem", "root", "");
+            
+            //Create the prepfetchUserStatementaredstatement(s)
+            fetchUserStatement = conn.prepareStatement("select * from users where Username=?");
+
+            //Add parameters to the ?'s in the preparedstatement and execute
+            fetchUserStatement.setString(1, username);
+            rs = fetchUserStatement.executeQuery();
+            
+            //if we've returned a row, turn that row into a new user object
+            if (rs.next()) {
+                user = new User();
+                user.setUserID(rs.getInt("ID")); 
+                user.setUsername(rs.getString("Username")); 
+                user.setEmail(rs.getString("Email"));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            DBUtil.close(rs);
+            DBUtil.close(fetchUserStatement);
+            DBUtil.close(conn);
+        }
+        return user;
     }
 }

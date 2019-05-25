@@ -1,3 +1,5 @@
+var unameavailable = true;
+
 
 function matchPass() {
     var pass = document.getElementById("Password").value;
@@ -73,15 +75,17 @@ function alreadyExists(uname) {
             if(!res.doesExist) {
                 span.innerHTML = "Available";
                 span.className = "alert alert-success";
+                unameavailable = true;
             }
             else {
                 span.innerHTML = "Not Available";
                 span.className = "alert alert-danger";
+                unameavailable = false;
             }
             return res.doesExist();
         }
     };
-    xhttp.open("GET", "/Hanashi/UsernameExists?uname="+uname, true);
+    xhttp.open("GET", "UsernameExists?uname="+uname, true);
     xhttp.send();
 }
 
@@ -121,6 +125,10 @@ function isValidated() {
         span.className = "alert alert-danger";
         return false;
     }
+    
+    
+    if(!unameavailable)
+        return false;
 
 
 
@@ -136,7 +144,7 @@ function isValidated() {
 
     // Update the text indicator
     if (val !== "") {
-        if(result.score < 1)
+        if(result.score < 3)
             return false;
     } else {
         return false;
