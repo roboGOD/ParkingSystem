@@ -38,7 +38,7 @@
                     
                     %>
                     
-                    <select id="vehicle" name="vehicle" readonly>
+                    <select id="vehicle" name="vehicle" disabled>
                         <option value="<%=car.getSno()%>"> <%= car.getYear()%> <%= car.getMake() %> <%=car.getModel()%> (<%=car.getPlateNo()%>)  </option>
                     </select>
                     

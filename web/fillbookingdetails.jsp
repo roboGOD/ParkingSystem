@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Book Parking </title>
     </head>
-    <body onload="init()">
+    <body onload="init()" class="body-texture">
         <div class="body-content">
             <h4 class="alert alert-primary"> Fill Booking Details </h4>
             <div id="bookingdetails">

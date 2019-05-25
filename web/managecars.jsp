@@ -14,7 +14,7 @@
     </head>
     <body>
         <% if(currentUser != null) { %>
-        <div class="body-content">
+        <div class="body-content body-content-nobackground">
             <h4 class="alert alert-primary"> Manage Cars </h4>
             
         <%
@@ -30,7 +30,7 @@
         <% } else { %>
         
             <div class="car-details-container">
-                <table class="table table-hover">
+                <table class="table table-hover table-striped table-light  text-dark">
                     <thead class="thead text-light" style="background-color: #1f0f66;">
                         <tr>
                             <th> License Plate Number </th>

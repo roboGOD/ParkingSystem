@@ -13,8 +13,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> View Bookings </title>
     </head>
-    <body>
-        <div class="body-content body-content-wider">
+    <body class="body-texture">
+        <div class="body-content body-content-wider body-content-nobackground">
             <h4 class="alert alert-primary"> View Bookings </h4>
             <%
         
@@ -24,7 +24,7 @@
             %>
 
             <div class="bookings-container">
-                <table class="table table-hover">
+                <table class="table table-hover table-striped table-light text-dark">
                     <thead class="thead text-light" style="background-color: #1f0f66;">
                         <tr>
                             <th> ID </th>
@@ -37,10 +37,10 @@
                             <th> Booking Date </th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                     <% for(pojos.Booking booking : bookings) { %>
 
-                        <tr>
+                        <tr >
                             <td> <%=booking.getId()%> </td>
                             <td> <%=booking.getLocationId()%> </td>
                             <td> <%=booking.getSlotId()%> </td>

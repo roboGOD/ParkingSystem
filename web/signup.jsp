@@ -11,8 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Sign Up </title>
     </head>
-    <body>
-        <div class="body-content">
+    <body class='body-texture'>
+        <div class="body-content body-content-nobackground">
             <div id="signupform">
                 
                 <% if(session.getAttribute("errorMessage") != null) { %>
@@ -55,7 +55,7 @@
                         <span id="alertPassMatch"> </span>
                     </div>  <br>
 
-                    <div id="signup-submit"><input type="submit" class="btn btn-outline-primary" value="Sign Up"></div>
+                    <div id="signup-submit"><input type="submit" class="btn btn-success" value="Sign Up"></div>
                 </form>
             </div>
         </div>

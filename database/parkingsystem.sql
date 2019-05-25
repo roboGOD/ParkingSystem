@@ -33,7 +33,7 @@ CREATE TABLE `bookings` (
   `BookingTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `Category` varchar(50) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
-INSERT INTO `bookings` VALUES (1,3,1,'2019-05-23 22:29:00',2,'robogod',1,'2019-05-20 22:30:18','premium'),(2,3,4,'2019-05-24 22:42:00',2,'robogod',1,'2019-05-20 22:37:29','premium'),(3,3,2,'2019-05-23 22:49:00',2,'robogod',1,'2019-05-20 22:41:44','economy'),(4,2,9,'2019-05-24 21:46:00',1,'robogod',2,'2019-05-20 22:47:39','premium'),(5,3,14,'2019-05-30 21:55:00',2,'robogod',2,'2019-05-20 22:56:11','economy'),(6,3,4,'2019-05-23 19:32:00',12,'robogod',1,'2019-05-21 20:40:06','economy'),(7,3,5,'2019-05-23 21:17:00',4,'robogod',1,'2019-05-21 21:19:36','premium'),(8,3,105,'2019-05-23 18:37:00',12,'robogod',1,'2019-05-23 20:04:16','economy'),(9,3,36,'2019-05-23 20:04:00',12,'robogod',1,'2019-05-23 20:05:30','economy'),(10,3,28,'2019-05-23 21:07:00',15,'robogod',1,'2019-05-23 20:06:18','economy'),(11,3,87,'2019-05-23 21:07:00',11,'robogod',1,'2019-05-23 20:07:26','economy'),(12,3,62,'2019-05-24 00:50:00',3,'robogod',1,'2019-05-23 20:14:43','economy');
+INSERT INTO `bookings` VALUES (1,3,1,'2019-05-23 22:29:00',2,'robogod',1,'2019-05-20 22:30:18','premium'),(2,3,4,'2019-05-24 22:42:00',2,'robogod',1,'2019-05-20 22:37:29','premium'),(3,3,2,'2019-05-23 22:49:00',2,'robogod',1,'2019-05-20 22:41:44','economy'),(4,2,9,'2019-05-24 21:46:00',1,'robogod',2,'2019-05-20 22:47:39','premium'),(5,3,14,'2019-05-30 21:55:00',2,'robogod',2,'2019-05-20 22:56:11','economy'),(6,3,4,'2019-05-23 19:32:00',12,'robogod',1,'2019-05-21 20:40:06','economy'),(7,3,5,'2019-05-23 21:17:00',4,'robogod',1,'2019-05-21 21:19:36','premium'),(8,3,105,'2019-05-23 18:37:00',12,'robogod',1,'2019-05-23 20:04:16','economy'),(9,3,36,'2019-05-23 20:04:00',12,'robogod',1,'2019-05-23 20:05:30','economy'),(10,3,28,'2019-05-23 21:07:00',15,'robogod',1,'2019-05-23 20:06:18','economy'),(11,3,87,'2019-05-23 21:07:00',11,'robogod',1,'2019-05-23 20:07:26','economy'),(12,3,62,'2019-05-24 00:50:00',3,'robogod',1,'2019-05-23 20:14:43','economy'),(13,3,48,'2019-05-23 23:18:00',4,'robogod',1,'2019-05-23 22:18:26','economy');
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-24  3:02:50
+-- Dump completed on 2019-05-24  3:49:17

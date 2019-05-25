@@ -1,6 +1,6 @@
         
 
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1f0f66;">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background: url('images/navbar-background.jpg');">
           <a class="navbar-brand" href="index.jsp"> Parking System </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,9 +10,6 @@
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
                 <a class="nav-link active" href="index.jsp">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"> About </a>
               </li>
               
               <% if(session.getAttribute("user") != null)  { %>

@@ -11,8 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Login </title>
     </head>
-    <body>
-        <div class="body-content">
+    <body class='body-texture'>
+        <div class="body-content body-content-nobackground">
             <div id='loginform-cotainer'>
 
                 <% if(session.getAttribute("errorMessage") != null) { %>    
@@ -32,7 +32,7 @@
                             <input type="password" name="Password" placeholder="Password" class="form-control" required>
                         </div>  <br>
 
-                    <input type="submit" class="btn btn-outline-primary" value="Log In">
+                    <input type="submit" class="btn btn-success" value="Log In">
                 </form>
             </div>
         </div>
